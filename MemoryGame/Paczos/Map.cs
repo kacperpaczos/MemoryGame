@@ -14,12 +14,14 @@ namespace Paczos
         // Deklaracja tablicy dwuwymiarowej do przechowywania stanów obrazów
         private ImageState[,] imageStates = new ImageState[4, 4];
         private string[] files;
+        private int[,] imageAssignments = new int[4, 4];
 
         // Konstruktor klasy Map, który ładuje obrazy z folderu
         public Map()
         {
             LoadImagesFromFolder(".\\images");
             InitializeImageStates();
+            AssignImages();
         }
 
         private void InitializeImageStates()
@@ -58,12 +60,36 @@ namespace Paczos
             }
         }
 
+        // Przypisanie obrazów do stanów w sposób zapewniający równomierne rozłożenie
+        private void AssignImages()
+        {
+            List<int> availableIndices = Enumerable.Range(0, 8).ToList();
+            List<int> imagePool = new List<int>();
+
+            // Każdy indeks obrazu dodajemy dwa razy do puli
+            foreach (var index in availableIndices)
+            {
+                imagePool.Add(index);
+                imagePool.Add(index);
+            }
+
+            Random random = new Random();
+            for (int x = 0; x < imageAssignments.GetLength(0); x++)
+            {
+                for (int y = 0; y < imageAssignments.GetLength(1); y++)
+                {
+                    int randomIndex = random.Next(imagePool.Count);
+                    imageAssignments[x, y] = imagePool[randomIndex];
+                    imagePool.RemoveAt(randomIndex);
+                }
+            }
+        }
+
         // Załadowanie obrazu dla danego stanu
         public Image LoadImageForState(int x, int y)
         {
-            Random random = new Random();
-            int imageIndex = random.Next(1, 9); // Losowanie liczby od 1 do 8
-            return Image.FromFile(files[imageIndex - 1]); // Załadowanie wylosowanego obrazu
+            int imageIndex = imageAssignments[x, y];
+            return Image.FromFile(files[imageIndex]);
         }
     }
 }
