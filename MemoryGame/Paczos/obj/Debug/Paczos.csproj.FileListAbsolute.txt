@@ -1,0 +1,10 @@
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\bin\Debug\Paczos.exe.config
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\bin\Debug\Paczos.exe
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\bin\Debug\Paczos.pdb
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\obj\Debug\Paczos.csproj.AssemblyReference.cache
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\obj\Debug\Paczos.Form1.resources
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\obj\Debug\Paczos.Properties.Resources.resources
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\obj\Debug\Paczos.csproj.GenerateResource.cache
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\obj\Debug\Paczos.csproj.CoreCompileInputs.cache
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\obj\Debug\Paczos.exe
+C:\Users\kacpe\Desktop\MemoryGame\MemoryGame\Paczos\obj\Debug\Paczos.pdb
