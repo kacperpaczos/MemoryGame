@@ -13,11 +13,12 @@ namespace Paczos
     public partial class Form1 : Form
     {
         private Map map;
-        //private PictureBox[,] pictureBoxes = new PictureBox[4, 4];
+        private PictureBox firstClickedPictureBox = null;
+        private PictureBox secondClickedPictureBox = null;
+
         public Form1()
         {
             InitializeComponent();
-            //InitializePictureBoxes();
             map = new Map();
             Draw();
         }
@@ -32,7 +33,7 @@ namespace Paczos
                     PictureBox pictureBox = (PictureBox)this.Controls.Find(pictureBoxName, true).FirstOrDefault();
                     if (pictureBox != null)
                     {
-                        //MessageBox.Show(pictureBoxName);
+                        pictureBox.Click += PictureBox_Click;
                         switch (map.GetImageStates()[x, y])
                         {
                             case ImageState.Hidden:
@@ -50,6 +51,35 @@ namespace Paczos
             }
         }
 
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            PictureBox clickedPictureBox = sender as PictureBox;
+            if (clickedPictureBox != null)
+            {
+                map.Reveal(clickedPictureBox.Name);
+                clickedPictureBox.Image = map.LoadImageForStateFromName(clickedPictureBox.Name);
+
+                if (firstClickedPictureBox == null)
+                {
+                    firstClickedPictureBox = clickedPictureBox;
+                }
+                else if (secondClickedPictureBox == null)
+                {
+                    secondClickedPictureBox = clickedPictureBox;
+                    if (map.Match(firstClickedPictureBox.Name, secondClickedPictureBox.Name))
+                    {
+                        MessageBox.Show("Dopasowano!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nie dopasowano!");
+                    }
+                    firstClickedPictureBox = null;
+                    secondClickedPictureBox = null;
+                }
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ClientSize = new Size(600, 600);
@@ -57,3 +87,4 @@ namespace Paczos
         }
     }
 }
+

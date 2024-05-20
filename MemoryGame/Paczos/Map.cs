@@ -30,7 +30,7 @@ namespace Paczos
             {
                 for (int y = 0; y < imageStates.GetLength(1); y++)
                 {
-                    imageStates[x, y] = ImageState.Revealed;
+                    imageStates[x, y] = ImageState.Hidden;
                 }
             }
         }
@@ -90,6 +90,57 @@ namespace Paczos
         {
             int imageIndex = imageAssignments[x, y];
             return Image.FromFile(files[imageIndex]);
+        }
+
+        // Metoda do porównywania obrazów
+        public bool Match(string first, string second)
+        {
+            var coords1 = ParseCoords(first);
+            var coords2 = ParseCoords(second);
+
+            if (imageAssignments[coords1.Item1, coords1.Item2] == imageAssignments[coords2.Item1, coords2.Item2])
+            {
+                imageStates[coords1.Item1, coords1.Item2] = ImageState.Matched;
+                imageStates[coords2.Item1, coords2.Item2] = ImageState.Matched;
+                return true;
+            }
+            else
+            {
+                imageStates[coords1.Item1, coords1.Item2] = ImageState.Hidden;
+                imageStates[coords2.Item1, coords2.Item2] = ImageState.Hidden;
+                return false;
+            }
+        }
+
+        private (int, int) ParseCoords(string name)
+        {
+            string[] parts = name.Replace("pictureBox", "").Split('_');
+            if (parts.Length != 2)
+                throw new ArgumentException("Nieprawidłowy format wejściowy. Nazwa powinna zawierać dokładnie dwie części oddzielone znakiem '_'.");
+
+            MessageBox.Show($"Część 1: {parts[0]}, Część 2: {parts[1]}");
+            int x = Convert.ToInt32(parts[0]) - 1;
+            int y = Convert.ToInt32(parts[1]) - 1;
+
+            if (x < 0 || y < 0)
+                throw new IndexOutOfRangeException("Indeksy nie mogą być mniejsze niż zero.");
+            if (x >= imageAssignments.GetLength(0) || y >= imageAssignments.GetLength(1))
+                throw new IndexOutOfRangeException("Indeksy przekraczają dopuszczalny zakres.");
+            return (x, y);
+        }
+
+        // Odsłonięcie obrazu na podstawie nazwy
+        public void Reveal(string name)
+        {
+            var (x, y) = ParseCoords(name);
+            imageStates[x, y] = ImageState.Revealed;
+        }
+
+        // Załadowanie obrazu na podstawie nazwy
+        public Image LoadImageForStateFromName(string name)
+        {
+            var (x, y) = ParseCoords(name);
+            return LoadImageForState(x, y);
         }
     }
 }
