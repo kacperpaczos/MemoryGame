@@ -118,7 +118,7 @@ namespace Paczos
             if (parts.Length != 2)
                 throw new ArgumentException("Nieprawidłowy format wejściowy. Nazwa powinna zawierać dokładnie dwie części oddzielone znakiem '_'.");
 
-            MessageBox.Show($"Część 1: {parts[0]}, Część 2: {parts[1]}");
+            //MessageBox.Show($"Część 1: {parts[0]}, Część 2: {parts[1]}");
             int x = Convert.ToInt32(parts[0]) - 1;
             int y = Convert.ToInt32(parts[1]) - 1;
 
