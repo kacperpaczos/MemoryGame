@@ -1,40 +1,50 @@
-﻿using System;
+﻿using Paczos.Interfaces;
+using System;
 
 namespace Paczos.Models
 {
-    internal class MemoryGameUser
+    internal class MemoryGameUser : IMemoryGameUser
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string KeyData { get; set; }
-        public int Points { get; set; }
-        public int GamesPlayed { get; set; }
+        private string firstName;
+        private string lastName;
+        private string nickname;
+        private string keyData;
+        private int points;
+        private int gamesPlayed;
 
-        // Konstruktor bezparametrowy
-        public MemoryGameUser()
+        public string GetFirstName() => firstName;
+        public void SetFirstName(string value) => firstName = value;
+        public string GetLastName() => lastName;
+        public void SetLastName(string value) => lastName = value;
+        public string GetNickname() => nickname;
+        public void SetNickname(string value) => nickname = value;
+        public string GetKeyData() => keyData;
+        public void SetKeyData(string value) => keyData = value;
+        public int GetPoints() => points;
+        public void SetPoints(int value) => points = value;
+        public int GetGamesPlayed() => gamesPlayed;
+        public void SetGamesPlayed(int value) => gamesPlayed = value;
+
+        public MemoryGameUser() { }
+
+        public MemoryGameUser(string firstName, string lastName, string nickname, string keyData, int points, int gamesPlayed)
         {
+            SetFirstName(firstName);
+            SetLastName(lastName);
+            SetNickname(nickname);
+            SetKeyData(keyData);
+            SetPoints(points);
+            SetGamesPlayed(gamesPlayed);
         }
 
-        // Konstruktor z parametrami
-        public MemoryGameUser(string firstName, string lastName, string keyData, int points, int gamesPlayed)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            KeyData = keyData;
-            Points = points;
-            GamesPlayed = gamesPlayed;
-        }
-
-        // Metoda do dodawania punktów
         public void AddPoints(int pointsToAdd)
         {
-            Points += pointsToAdd;
+            SetPoints(GetPoints() + pointsToAdd);
         }
 
-        // Metoda do zwiększenia liczby rozegranych gier
         public void IncrementGamesPlayed()
         {
-            GamesPlayed++;
+            SetGamesPlayed(GetGamesPlayed() + 1);
         }
     }
 }
