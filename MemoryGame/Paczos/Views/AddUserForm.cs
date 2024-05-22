@@ -25,11 +25,21 @@ namespace Paczos.Views
             firstNameTextBox.Enter += (sender, e) => { if (firstNameTextBox.Text == "First Name") firstNameTextBox.Text = ""; };
             firstNameTextBox.Leave += (sender, e) => { if (string.IsNullOrWhiteSpace(firstNameTextBox.Text)) firstNameTextBox.Text = "First Name"; };
 
-            Button saveButton = new Button { Text = "Zapisz", Location = new Point(10, 70) };
+            TextBox lastNameTextBox = new TextBox { Name = "lastNameTextBox", Text = "Last Name", Location = new Point(10, 70), Size = new Size(200, 20) };
+            lastNameTextBox.Enter += (sender, e) => { if (lastNameTextBox.Text == "Last Name") lastNameTextBox.Text = ""; };
+            lastNameTextBox.Leave += (sender, e) => { if (string.IsNullOrWhiteSpace(lastNameTextBox.Text)) lastNameTextBox.Text = "Last Name"; };
+
+            TextBox keyDataTextBox = new TextBox { Name = "keyDataTextBox", Text = "Key Data", Location = new Point(10, 100), Size = new Size(200, 20) };
+            keyDataTextBox.Enter += (sender, e) => { if (keyDataTextBox.Text == "Key Data") keyDataTextBox.Text = ""; };
+            keyDataTextBox.Leave += (sender, e) => { if (string.IsNullOrWhiteSpace(keyDataTextBox.Text)) keyDataTextBox.Text = "Key Data"; };
+
+            Button saveButton = new Button { Text = "Zapisz", Location = new Point(10, 130) };
             saveButton.Click += SaveButton_Click;
 
             Controls.Add(nicknameTextBox);
             Controls.Add(firstNameTextBox);
+            Controls.Add(lastNameTextBox);
+            Controls.Add(keyDataTextBox);
             Controls.Add(saveButton);
         }
 
@@ -39,6 +49,8 @@ namespace Paczos.Views
 
             newUser.SetNickname(((TextBox)Controls["nicknameTextBox"]).Text);
             newUser.SetFirstName(((TextBox)Controls["firstNameTextBox"]).Text);
+            newUser.SetLastName(((TextBox)Controls["lastNameTextBox"]).Text);
+            newUser.SetKeyData(((TextBox)Controls["keyDataTextBox"]).Text);
             // Ustaw inne właściwości zgodnie z potrzebami
 
             MemoryGameUsersManager.Instance.AddUser((MemoryGameUser)newUser);
@@ -46,5 +58,6 @@ namespace Paczos.Views
             Program.userPanel.ReloadUsersList();
             Close();
         }
+
     }
 }

@@ -17,6 +17,11 @@ namespace Paczos.Views
             InitializeComponent();
         }
 
+        public Button GameButton
+        {
+            get { return gameButton; }
+        }
+
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();

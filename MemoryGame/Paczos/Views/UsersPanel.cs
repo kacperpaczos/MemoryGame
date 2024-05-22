@@ -137,5 +137,11 @@ namespace Paczos.Views
                 MessageBox.Show("Nie zaznaczono żadnego użytkownika.");
             }
         }
+
+        private void EditUserButton_Click(object sender, EventArgs e)
+        {
+            Program.ShowEditUserForm();
+        }
     }
 }
+

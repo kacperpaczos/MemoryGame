@@ -6,6 +6,7 @@ using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
 using Paczos.Interfaces;
+using System.Linq;
 
 namespace Paczos
 {
@@ -17,13 +18,19 @@ namespace Paczos
         private List<Paczos.Interfaces.IMemoryGameUser> users;
         private MemoryGameUser mainUser; // Dodane pole dla głównego użytkownika
         private MemoryGameUser secondUser;
+        private int nextId = 1;
 
         private MemoryGameUsersManager()
         {
             LoadUsers();
-            mainUser = null; // Inicjalizacja głównego użytkownika jako null
+            mainUser = null;
             secondUser = null;
+            if (users.Count > 0)
+            {
+                nextId = users.Max(u => u.GetId()) + 1; // Ustawienie nextId na wartość wyższą o 1 od najwyższego ID w liście
+            }
         }
+
 
         public static MemoryGameUsersManager Instance
         {
@@ -69,6 +76,11 @@ namespace Paczos
 
         public void AddUser(MemoryGameUser user)
         {
+            if (users.Any(u => u.GetId() == user.GetId()))
+            {
+                throw new Exception("Użytkownik z tym ID już istnieje.");
+            }
+            user.SetId(nextId++); // Przypisanie unikalnego ID i inkrementacja dla następnego użytkownika
             users.Add(user);
             SaveUsers();
         }
@@ -88,6 +100,20 @@ namespace Paczos
         {
             secondUser = user;
             SaveUsers(); // Możesz również zdecydować się na zapisanie stanu drugiego użytkownika w pliku
+        }
+
+        public void UpdateUser(MemoryGameUser user)
+        {
+            int index = users.FindIndex(u => u.GetId() == user.GetId());
+            if (index != -1)
+            {
+                users[index] = user;
+                SaveUsers();
+            }
+            else
+            {
+                MessageBox.Show("Nie znaleziono użytkownika do aktualizacji.");
+            }
         }
     }
 }

@@ -33,6 +33,7 @@
             this.addUserButton = new System.Windows.Forms.Button();
             this.setMainUser = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.EditUserButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // backToMenu
@@ -86,11 +87,24 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // EditUserButton
+            // 
+            this.EditUserButton.Enabled = false;
+            this.EditUserButton.Location = new System.Drawing.Point(191, 70);
+            this.EditUserButton.Name = "EditUserButton";
+            this.EditUserButton.Size = new System.Drawing.Size(141, 23);
+            this.EditUserButton.TabIndex = 5;
+            this.EditUserButton.Text = "edytuj";
+            this.EditUserButton.UseVisualStyleBackColor = true;
+            this.EditUserButton.UseWaitCursor = true;
+            this.EditUserButton.Click += new System.EventHandler(this.EditUserButton_Click);
+            // 
             // UsersPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 450);
+            this.Controls.Add(this.EditUserButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.setMainUser);
             this.Controls.Add(this.addUserButton);
@@ -109,5 +123,6 @@
         private System.Windows.Forms.Button addUserButton;
         private System.Windows.Forms.Button setMainUser;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button EditUserButton;
     }
 }

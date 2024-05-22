@@ -20,5 +20,7 @@ namespace Paczos.Interfaces
         void SetPoints(int points);
         int GetGamesPlayed();
         void SetGamesPlayed(int gamesPlayed);
+        int GetId();
+        void SetId(int id);
     }
 }

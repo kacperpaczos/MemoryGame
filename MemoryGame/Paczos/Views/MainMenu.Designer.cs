@@ -46,6 +46,8 @@
             // 
             // gameButton
             // 
+            this.gameButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.gameButton.Enabled = false;
             this.gameButton.Location = new System.Drawing.Point(323, 95);
             this.gameButton.Name = "gameButton";
             this.gameButton.Size = new System.Drawing.Size(75, 23);

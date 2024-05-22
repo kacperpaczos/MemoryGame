@@ -1,1 +1,2 @@
-Anna,Nowak,annow,ABC456,150,3
+1,imie1,nazwisko1,pierwszy,Key1,0,0
+2,imie2,nazwisko2,drugi,key2,0,0

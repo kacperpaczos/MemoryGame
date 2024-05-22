@@ -57,7 +57,7 @@ namespace Paczos.DataAccess.FS
             {
                 foreach (var user in users)
                 {
-                    writer.WriteLine($"{user.GetFirstName()},{user.GetLastName()},{user.GetNickname()},{user.GetKeyData()},{user.GetPoints()},{user.GetGamesPlayed()}");
+                    writer.WriteLine($"{user.GetId()},{user.GetFirstName()},{user.GetLastName()},{user.GetNickname()},{user.GetKeyData()},{user.GetPoints()},{user.GetGamesPlayed()}");
                 }
             }
         }
@@ -71,11 +71,12 @@ namespace Paczos.DataAccess.FS
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] data = line.Split(',');
-                    if (data.Length == 6)
+                    if (data.Length == 7) // Teraz oczekujemy 7 elementów, w tym ID
                     {
-                        MemoryGameUser user = new MemoryGameUser(data[0], data[1], data[2], data[3], int.Parse(data[4]), int.Parse(data[5]));
+                        int id = int.Parse(data[0]);
+                        MemoryGameUser user = new MemoryGameUser(data[1], data[2], data[3], data[4], int.Parse(data[5]), int.Parse(data[6]), id);
                         users.Add(user);
-                        MessageBox.Show($"Imię: {user.GetFirstName()}\nNazwisko: {user.GetLastName()}\nPseudonim: {user.GetNickname()}\nKlucz: {user.GetKeyData()}\nPunkty: {user.GetPoints()}\nRozegrane gry: {user.GetGamesPlayed()}", "Załadowano użytkownika");
+                        MessageBox.Show($"ID: {user.GetId()}\nImię: {user.GetFirstName()}\nNazwisko: {user.GetLastName()}\nPseudonim: {user.GetNickname()}\nKlucz: {user.GetKeyData()}\nPunkty: {user.GetPoints()}\nRozegrane gry: {user.GetGamesPlayed()}", "Załadowano użytkownika");
                     }
                 }
             }

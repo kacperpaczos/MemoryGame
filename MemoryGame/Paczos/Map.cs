@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
-
+using Paczos.Interfaces;
 namespace Paczos
 {
     internal class Map : IMap

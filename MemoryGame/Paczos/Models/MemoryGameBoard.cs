@@ -1,3 +1,6 @@
+using Paczos.Interfaces;
+using System;
+
 namespace Paczos.Models
 {
 public class MemoryGameBoard : IMemoryGameBoard
@@ -27,23 +30,23 @@ public class MemoryGameBoard : IMemoryGameBoard
         }
     }
 
-    public ImageState GetState(int row, int column)
+    public Paczos.Interfaces.ImageState GetState(int row, int column)
     {
         if (row < 0 || column < 0 || row >= rows || column >= columns)
         {
             throw new IndexOutOfRangeException("Indeksy przekraczają dopuszczalny zakres.");
         }
-        return boardStates[row, column];
+        return (Paczos.Interfaces.ImageState)boardStates[row, column];
     }
 
-    public void SetState(int row, int column, ImageState state)
+    public void SetState(int row, int column, Paczos.Interfaces.ImageState state)
     {
         if (row < 0 || column < 0 || row >= rows || column >= columns)
         {
             throw new IndexOutOfRangeException("Indeksy przekraczają dopuszczalny zakres.");
         }
-        ImageState previousState = boardStates[row, column];
-        boardStates[row, column] = state;
+        Paczos.Interfaces.ImageState previousState = (Paczos.Interfaces.ImageState)boardStates[row, column];
+        boardStates[row, column] = (Paczos.Interfaces.ImageState)state; // Rzutowanie, jeśli jest bezpieczne
         history.RecordMove(row, column, previousState, state);
     }
 
