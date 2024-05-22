@@ -27,7 +27,7 @@ namespace Paczos.Views
         private void FillUsersList()
         {
             // Pobranie użytkowników z MemoryGameUsersManager
-            List<MemoryGameUser> users = MemoryGameUsersManager.Instance.GetUsers();
+            List<Paczos.Interfaces.IMemoryGameUser> users = MemoryGameUsersManager.Instance.GetUsers();
 
             // Czyszczenie istniejących elementów
             usersList.Items.Clear();
@@ -61,15 +61,23 @@ namespace Paczos.Views
             {
                 // Wyświetlenie informacji o zaznaczonym użytkowniku
                 string selectedUserNickname = usersList.SelectedItems[0].Text;
-                MemoryGameUser user = MemoryGameUsersManager.Instance.GetUsers().FirstOrDefault(u => u.GetNickname() == selectedUserNickname);
+                var user = MemoryGameUsersManager.Instance.GetUsers().FirstOrDefault(u => u.GetNickname() == selectedUserNickname);
 
                 if (user != null)
                 {
-                    MessageBox.Show($"Wybrano użytkownika: {user.GetNickname()}, Szczegóły: {user.GetFirstName()}");
+                    // Jawne rzutowanie z IMemoryGameUser na MemoryGameUser
+                    MemoryGameUser castedUser = user as MemoryGameUser;
+                    if (castedUser != null)
+                    {
+                        MessageBox.Show($"Wybrano użytkownika: {castedUser.GetNickname()}, Szczegóły: {castedUser.GetFirstName()}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nie można przekonwertować wybranego użytkownika.");
+                    }
                 }
             }
         }
-
         private void addUserButton_Click(object sender, EventArgs e)
         {
             AddUserForm addUserForm = new AddUserForm();
@@ -81,13 +89,21 @@ namespace Paczos.Views
             if (usersList.SelectedItems.Count > 0)
             {
                 string selectedUserNickname = usersList.SelectedItems[0].Text;
-                MemoryGameUser userToDelete = MemoryGameUsersManager.Instance.GetUsers().FirstOrDefault(u => u.GetNickname() == selectedUserNickname);
+                var userToDelete = MemoryGameUsersManager.Instance.GetUsers().FirstOrDefault(u => u.GetNickname() == selectedUserNickname);
                 if (userToDelete != null)
                 {
-                    MemoryGameUsersManager.Instance.GetUsers().Remove(userToDelete);
-                    MemoryGameUsersManager.Instance.SaveUsers();
-                    ReloadUsersList();
-                    MessageBox.Show("Usunięto użytkownika: " + userToDelete.GetNickname());
+                    MemoryGameUser castedUserToDelete = userToDelete as MemoryGameUser;
+                    if (castedUserToDelete != null)
+                    {
+                        MemoryGameUsersManager.Instance.GetUsers().Remove(castedUserToDelete);
+                        MemoryGameUsersManager.Instance.SaveUsers();
+                        ReloadUsersList();
+                        MessageBox.Show("Usunięto użytkownika: " + castedUserToDelete.GetNickname());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nie można przekonwertować wybranego użytkownika do usunięcia.");
+                    }
                 }
             }
         }
@@ -97,12 +113,28 @@ namespace Paczos.Views
             if (usersList.SelectedItems.Count > 0)
             {
                 string selectedUserNickname = usersList.SelectedItems[0].Text;
-                MemoryGameUser mainUser = MemoryGameUsersManager.Instance.GetUsers().FirstOrDefault(u => u.GetNickname() == selectedUserNickname);
-                if (mainUser != null)
+                var user = MemoryGameUsersManager.Instance.GetUsers().FirstOrDefault(u => u.GetNickname() == selectedUserNickname);
+                if (user != null)
                 {
-                    MemoryGameUsersManager.Instance.SetMainUser(mainUser);
-                    MessageBox.Show("Ustawiono głównego gracza: " + mainUser.GetNickname());
+                    MemoryGameUser castedUser = user as MemoryGameUser;
+                    if (castedUser != null)
+                    {
+                        MemoryGameUsersManager.Instance.SetMainUser(castedUser);
+                        MessageBox.Show("Ustawiono głównego gracza: " + castedUser.GetNickname());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nie można przekonwertować wybranego użytkownika na głównego gracza.");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Nie znaleziono użytkownika.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie zaznaczono żadnego użytkownika.");
             }
         }
     }
