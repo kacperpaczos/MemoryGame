@@ -1,0 +1,11 @@
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\bin\Debug\net8.0\Paczos.MemoryGame.INTERFACES.deps.json
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\bin\Debug\net8.0\Paczos.MemoryGame.INTERFACES.dll
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\bin\Debug\net8.0\Paczos.MemoryGame.INTERFACES.pdb
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\obj\Debug\net8.0\Paczos.MemoryGame.INTERFACES.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\obj\Debug\net8.0\Paczos.MemoryGame.INTERFACES.AssemblyInfoInputs.cache
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\obj\Debug\net8.0\Paczos.MemoryGame.INTERFACES.AssemblyInfo.cs
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\obj\Debug\net8.0\Paczos.MemoryGame.INTERFACES.csproj.CoreCompileInputs.cache
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\obj\Debug\net8.0\Paczos.MemoryGame.INTERFACES.dll
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\obj\Debug\net8.0\refint\Paczos.MemoryGame.INTERFACES.dll
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\obj\Debug\net8.0\Paczos.MemoryGame.INTERFACES.pdb
+C:\Users\P0419818\Desktop\MG5\Paczos.MemoryGame.INTERFACES\obj\Debug\net8.0\ref\Paczos.MemoryGame.INTERFACES.dll

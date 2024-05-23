@@ -1,0 +1,44 @@
+﻿<Page x:Class="Paczos.MemoryGame.UI.Views.Game"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Paczos.MemoryGame.UI.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Game">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <UniformGrid Grid.Column="0" Rows="4" Columns="4">
+            <Button Name="Card1" Click="Card_Click"/>
+            <Button Name="Card2" Click="Card_Click"/>
+            <Button Name="Card3" Click="Card_Click"/>
+            <Button Name="Card4" Click="Card_Click"/>
+            <Button Name="Card5" Click="Card_Click"/>
+            <Button Name="Card6" Click="Card_Click"/>
+            <Button Name="Card7" Click="Card_Click"/>
+            <Button Name="Card8" Click="Card_Click"/>
+            <Button Name="Card9" Click="Card_Click"/>
+            <Button Name="Card10" Click="Card_Click"/>
+            <Button Name="Card11" Click="Card_Click"/>
+            <Button Name="Card12" Click="Card_Click"/>
+            <Button Name="Card13" Click="Card_Click"/>
+            <Button Name="Card14" Click="Card_Click"/>
+            <Button Name="Card15" Click="Card_Click"/>
+            <Button Name="Card16" Click="Card_Click"/>
+        </UniformGrid>
+
+        <ListBox Grid.Column="1" Name="MovesList">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding}" Width="50" Height="50"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>

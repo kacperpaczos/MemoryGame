@@ -1,0 +1,25 @@
+﻿<Page x:Class="Paczos.MemoryGame.UI.Views.Profile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Paczos.MemoryGame.UI.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Profile">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+            <TextBlock Text="Nick:" Margin="0,0,0,10"/>
+            <TextBox x:Name="NickTextBox" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Imię:" Margin="0,0,0,10"/>
+            <TextBox x:Name="FirstNameTextBox" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Nazwisko:" Margin="0,0,0,10"/>
+            <TextBox x:Name="LastNameTextBox" Margin="0,0,0,20"/>
+
+            <Button Content="Zapisz zmiany" Click="SaveUserButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
