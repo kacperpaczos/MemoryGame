@@ -61,7 +61,7 @@ namespace Paczos.MemoryGame.UI.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Paczos.MemoryGame.UI;component/views/mainmenu.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Paczos.MemoryGame.UI;V1.0.0.0;component/views/mainmenu.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\MainMenu.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

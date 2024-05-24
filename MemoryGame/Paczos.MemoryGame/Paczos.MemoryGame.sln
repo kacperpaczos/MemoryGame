@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paczos.MemoryGame", "Paczos.MemoryGame.csproj", "{341F671B-5F4A-4F3E-B6B0-A0AF1404BF1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paczos.MemoryGame.CORE", "..\Paczos.MemoryGame.CORE\Paczos.MemoryGame.CORE.csproj", "{75AADC63-6CE3-4DD0-809F-D791101134B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paczos.MemoryGame.CORE", "..\Paczos.MemoryGame.CORE\Paczos.MemoryGame.CORE.csproj", "{75AADC63-6CE3-4DD0-809F-D791101134B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paczos.MemoryGame.INTERFACES", "..\Paczos.MemoryGame.INTERFACES\Paczos.MemoryGame.INTERFACES.csproj", "{3C70FD70-F0DE-49A0-9A66-346272933A20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paczos.MemoryGame.INTERFACES", "..\Paczos.MemoryGame.INTERFACES\Paczos.MemoryGame.INTERFACES.csproj", "{3C70FD70-F0DE-49A0-9A66-346272933A20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paczos.MemoryGame.DAO", "..\Paczos.MemoryGame.DAO\Paczos.MemoryGame.DAO.csproj", "{49C0CCB9-F234-4509-A3D0-97A64B1061CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paczos.MemoryGame.DAO", "..\Paczos.MemoryGame.DAO\Paczos.MemoryGame.DAO.csproj", "{49C0CCB9-F234-4509-A3D0-97A64B1061CF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paczos.MemoryGame.UI", "..\Paczos.MemoryGame.UI\Paczos.MemoryGame.UI.csproj", "{22DC8A3D-738A-4625-A0E3-99000389323C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paczos.MemoryGame.UI", "..\Paczos.MemoryGame.UI\Paczos.MemoryGame.UI.csproj", "{22DC8A3D-738A-4625-A0E3-99000389323C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{341F671B-5F4A-4F3E-B6B0-A0AF1404BF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{341F671B-5F4A-4F3E-B6B0-A0AF1404BF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{341F671B-5F4A-4F3E-B6B0-A0AF1404BF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{341F671B-5F4A-4F3E-B6B0-A0AF1404BF1C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75AADC63-6CE3-4DD0-809F-D791101134B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{75AADC63-6CE3-4DD0-809F-D791101134B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75AADC63-6CE3-4DD0-809F-D791101134B9}.Release|Any CPU.ActiveCfg = Release|Any CPU

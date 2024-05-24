@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Paczos.MemoryGame.CORE")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Paczos.MemoryGame.INTERFACES")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c55ef871d92ff3e6fc8b30667def96cda4f5ce6")]
-[assembly: System.Reflection.AssemblyProductAttribute("Paczos.MemoryGame.CORE")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Paczos.MemoryGame.CORE")]
+[assembly: System.Reflection.AssemblyProductAttribute("Paczos.MemoryGame.INTERFACES")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Paczos.MemoryGame.INTERFACES")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.

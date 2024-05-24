@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Paczos.MemoryGame.DAO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0741f613d8a5e6a6fbcf96274c8e8558c1f630b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c55ef871d92ff3e6fc8b30667def96cda4f5ce6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Paczos.MemoryGame.DAO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Paczos.MemoryGame.DAO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

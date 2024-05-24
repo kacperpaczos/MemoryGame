@@ -1,39 +1,39 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame\\",
+  "WorkspaceRootPath": "C:\\Users\\kacpe\\Desktop\\MemoryGame\\MemoryGame\\Paczos.MemoryGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{49C0CCB9-F234-4509-A3D0-97A64B1061CF}|..\\Paczos.MemoryGame.DAO\\Paczos.MemoryGame.DAO.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\do\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\do\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22DC8A3D-738A-4625-A0E3-99000389323C}|..\\Paczos.MemoryGame.UI\\Paczos.MemoryGame.UI.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.ui\\views\\game.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.interfaces\\do\\iimagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C70FD70-F0DE-49A0-9A66-346272933A20}|..\\Paczos.MemoryGame.INTERFACES\\Paczos.MemoryGame.INTERFACES.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.interfaces\\do\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.interfaces\\do\\iimageinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C70FD70-F0DE-49A0-9A66-346272933A20}|..\\Paczos.MemoryGame.INTERFACES\\Paczos.MemoryGame.INTERFACES.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.interfaces\\do\\iimagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\daocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C70FD70-F0DE-49A0-9A66-346272933A20}|..\\Paczos.MemoryGame.INTERFACES\\Paczos.MemoryGame.INTERFACES.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.interfaces\\do\\iimageinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49C0CCB9-F234-4509-A3D0-97A64B1061CF}|..\\Paczos.MemoryGame.DAO\\Paczos.MemoryGame.DAO.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\daocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\entities\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49C0CCB9-F234-4509-A3D0-97A64B1061CF}|..\\Paczos.MemoryGame.DAO\\Paczos.MemoryGame.DAO.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\entities\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49C0CCB9-F234-4509-A3D0-97A64B1061CF}|..\\Paczos.MemoryGame.DAO\\Paczos.MemoryGame.DAO.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\entities\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.interfaces\\do\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49C0CCB9-F234-4509-A3D0-97A64B1061CF}|..\\Paczos.MemoryGame.DAO\\Paczos.MemoryGame.DAO.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\entities\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.ui\\views\\game.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49C0CCB9-F234-4509-A3D0-97A64B1061CF}|..\\Paczos.MemoryGame.DAO\\Paczos.MemoryGame.DAO.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\do\\imagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\do\\imagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49C0CCB9-F234-4509-A3D0-97A64B1061CF}|..\\Paczos.MemoryGame.DAO\\Paczos.MemoryGame.DAO.csproj|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\do\\imageinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\p0419818\\desktop\\mg5\\paczos.memorygame.dao\\do\\imageinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,90 +47,84 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "IImageManager.cs",
               "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageManager.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.INTERFACES\\DO\\IImageManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageManager.cs",
               "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageManager.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.INTERFACES\\DO\\IImageManager.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:50:48.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T18:50:48.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IImageInfo.cs",
+              "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageInfo.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageInfo.cs",
+              "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageInfo.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T18:50:47.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DAOContext.cs",
+              "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DAOContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DAOContext.cs",
+              "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DAOContext.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DAOContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T18:50:28.097Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IImageInfo.cs",
-              "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageInfo.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.INTERFACES\\DO\\IImageInfo.cs",
-              "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IImageInfo.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.INTERFACES\\DO\\IImageInfo.cs",
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\User.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:50:47.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T18:50:24.083Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "DAOContext.cs",
-              "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DAOContext.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.DAO\\DAOContext.cs",
-              "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DAOContext.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.DAO\\DAOContext.cs",
+              "Title": "Image.cs",
+              "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Image.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Image.cs",
+              "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Image.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Image.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:50:28.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T18:50:22.678Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.DAO\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\User.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.DAO\\Entities\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:50:24.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Image.cs",
-              "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Image.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.DAO\\Entities\\Image.cs",
-              "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Image.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.DAO\\Entities\\Image.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:50:22.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Game.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.DAO\\Entities\\Game.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Game.cs",
               "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Game.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.DAO\\Entities\\Game.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\Entities\\Game.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:50:18.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T18:50:18.66Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\UserRepository.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.DAO\\DO\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\UserRepository.cs",
               "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\UserRepository.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.DAO\\DO\\UserRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\UserRepository.cs",
               "ViewState": "AQIAAFEAAAAAAAAAAAAawF8AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-24T18:49:48.652Z",
@@ -138,55 +132,51 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.INTERFACES\\DO\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IUserRepository.cs",
               "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IUserRepository.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.INTERFACES\\DO\\IUserRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\DO\\IUserRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:50:56.072Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T18:50:56.072Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Game.xaml.cs",
               "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.UI\\Views\\Game.xaml.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.UI\\Views\\Game.xaml.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.UI\\Views\\Game.xaml.cs",
               "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.UI\\Views\\Game.xaml.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.UI\\Views\\Game.xaml.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.UI\\Views\\Game.xaml.cs",
               "ViewState": "AQIAACoAAAAAAAAAAAAswDMAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:54:43.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T18:54:43.47Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "ImageManager.cs",
               "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\ImageManager.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.DAO\\DO\\ImageManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\ImageManager.cs",
               "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\ImageManager.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.DAO\\DO\\ImageManager.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\ImageManager.cs",
               "ViewState": "AQIAAFMAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:49:31.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T18:49:31.878Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "ImageInfo.cs",
               "DocumentMoniker": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\ImageInfo.cs",
-              "RelativeDocumentMoniker": "..\\Paczos.MemoryGame.DAO\\DO\\ImageInfo.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\ImageInfo.cs",
               "ToolTip": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\ImageInfo.cs",
-              "RelativeToolTip": "..\\Paczos.MemoryGame.DAO\\DO\\ImageInfo.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.DAO\\DO\\ImageInfo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:49:29.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T18:49:29.292Z"
             }
           ]
         }
