@@ -52,8 +52,6 @@ namespace Paczos.MemoryGame.UI.Views
                 EndTime = startTime
             };
 
-            App.UserRepository.StartGame(userId);
-
             SetPlayerData();
             InitializeGameBoard();
             StartGameTimer();
@@ -61,7 +59,6 @@ namespace Paczos.MemoryGame.UI.Views
 
         private int GenerateUniqueGameId()
         {
-            // Implementacja generowania unikalnego ID
             return new Random().Next(1, int.MaxValue);
         }
 
@@ -95,7 +92,6 @@ namespace Paczos.MemoryGame.UI.Views
             firstClicked.IsEnabled = false;
             secondClicked.IsEnabled = false;
 
-            // Dodaj grafikę karty do MovesList
             AddCardImageToMovesList(buttonImageMap[firstClicked]);
 
             firstClicked = null;
@@ -111,29 +107,19 @@ namespace Paczos.MemoryGame.UI.Views
 
         private void EndCurrentGame()
         {
-            MessageBox.Show("Koniec gry! Dziękujemy za grę.1");
             if (currentGame != null)
             {
-                MessageBox.Show("Koniec gry! Dziękujemy za grę2.");
                 currentGame.EndTime = DateTime.Now;
+                var user = App.FirstUser;
 
                 var gameEntity = new Paczos.MemoryGame.DAO.Entities.Game
                 {
                     Id = currentGame.Id,
+                    UserId = user.Id,
                     StartTime = currentGame.StartTime,
                     EndTime = currentGame.EndTime,
-                    // Przypisz inne właściwości, jeśli są
                 };
 
-                App.UserRepository.EndGame(gameEntity.Id);
-
-                var user = App.FirstUser;
-                user.Games.Add(gameEntity); // Dodaj grę do listy gier użytkownika
-                App.UserRepository.Update(user); // Zakładam, że masz metodę do aktualizacji użytkownika
-
-                // Wywołanie metody AddGameToUserStats
-                
-                MessageBox.Show("Koniec gry! Dziękujemy za grę3.");
                 App.UserRepository.AddGameToUserStats(user.Id, gameEntity);
 
                 currentGame = null;
@@ -201,7 +187,7 @@ namespace Paczos.MemoryGame.UI.Views
 
         private void AssignImageToButtons(BitmapImage image, List<Button> buttons, Random random)
         {
-            for (int i = 0; i < 2; i++) // Each image should appear twice
+            for (int i = 0; i < 2; i++)
             {
                 if (buttons.Count == 0) break;
                 var index = random.Next(buttons.Count);
@@ -266,7 +252,6 @@ namespace Paczos.MemoryGame.UI.Views
 
         private void AddCardImageToMovesList(BitmapImage cardImage)
         {
-            // Dodanie obrazu karty do MovesList
             MovesList.Items.Add(new { Image = cardImage });
         }
 
@@ -277,6 +262,12 @@ namespace Paczos.MemoryGame.UI.Views
 
         private void StartGameTimer()
         {
+            if (gameTimer != null)
+            {
+                gameTimer.Stop();
+                gameTimer.Tick -= GameTimer_Tick;
+            }
+
             secondsElapsed = 0;
             gameTimer = new DispatcherTimer();
             gameTimer.Interval = TimeSpan.FromSeconds(1);

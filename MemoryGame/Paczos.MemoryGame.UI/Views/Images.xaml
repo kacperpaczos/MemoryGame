@@ -30,14 +30,14 @@
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <!-- Wyspa 1: Dodawanie i usuwanie zdjęć -->
             <StackPanel Margin="10">
-                <Button Content="Załaduj Obrazy" Click="LoadImages_Click" Padding="10"/>
-                <Button x:Name="RemoveImageButton" Content="Usuń Wybrane Zdjęcie" Click="RemoveImage_Click" Margin="10" Padding="10" IsEnabled="False"/>
+                <Button Content="Załaduj obrazy" Click="LoadImages_Click" Padding="10"/>
+                <Button x:Name="RemoveImageButton" Content="Usuń zdjęcie" Click="RemoveImage_Click" Margin="10" Padding="10" IsEnabled="False"/>
             </StackPanel>
             <!-- Wyspa 2: Operacje na bazie danych -->
             <StackPanel Margin="10">
-                <Button Content="Wyślij do Bazy Danych" Click="SendToDatabase_Click" Margin="10" Padding="10"/>
-                <Button Content="Pobierz z Bazy Danych" Click="FetchFromDatabase_Click" Margin="10" Padding="10"/>
-                <Button Content="Wyczyść Dane z pamięci lokalnej" Click="ClearData_Click" Margin="10" Padding="10"/>
+                <Button Content="Zapisz w bazie danych" Click="SendToDatabase_Click" Margin="10" Padding="10"/>
+                <Button Content="Załąduj za bazy danych" Click="FetchFromDatabase_Click" Margin="10" Padding="10"/>
+                <Button Content="Wyczyść listę lokalną" Click="ClearData_Click" Margin="10" Padding="10"/>
             </StackPanel>
             <Button Content="Powrót do Menu Głównego" Click="ReturnToMainMenu_Click" Margin="10" Padding="10"/>
         </StackPanel>

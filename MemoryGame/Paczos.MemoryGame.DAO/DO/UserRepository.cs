@@ -25,11 +25,12 @@ namespace Paczos.MemoryGame.DAO.DO
             var user2 = Create("TestUser2", "Ewa", "Kowalska");
             var user3 = Create("TestUser3", "Marek", "Wiśniewski");
 
-            var game1 = new Game { UserId = user1.Id, StartTime = DateTime.Now.AddHours(-1), EndTime = DateTime.Now };
-            var game2 = new Game { UserId = user2.Id, StartTime = DateTime.Now.AddHours(-2), EndTime = DateTime.Now.AddHours(-1) };
-            var game3 = new Game { UserId = user2.Id, StartTime = DateTime.Now.AddHours(-3), EndTime = DateTime.Now.AddHours(-2) };
-            var game4 = new Game { UserId = user2.Id, StartTime = DateTime.Now.AddHours(-4), EndTime = DateTime.Now.AddHours(-3) };
-            var game5 = new Game { UserId = user3.Id, StartTime = DateTime.Now.AddHours(-5), EndTime = DateTime.Now.AddHours(-4) };
+            var currentTime = DateTime.Now;
+            var game1 = new Game { UserId = user1.Id, StartTime = currentTime.AddSeconds(-30), EndTime = currentTime };
+            var game2 = new Game { UserId = user2.Id, StartTime = currentTime.AddSeconds(-30), EndTime = currentTime };
+            var game3 = new Game { UserId = user2.Id, StartTime = currentTime.AddSeconds(-30), EndTime = currentTime };
+            var game4 = new Game { UserId = user2.Id, StartTime = currentTime.AddSeconds(-30), EndTime = currentTime };
+            var game5 = new Game { UserId = user3.Id, StartTime = currentTime.AddSeconds(-30), EndTime = currentTime };
 
             _context.Games.AddRange(game1, game2, game3, game4, game5);
             _context.SaveChanges();
@@ -93,7 +94,7 @@ namespace Paczos.MemoryGame.DAO.DO
                 existingUser.LastName = userToUpdate.LastName;
                 existingUser.CreationDate = userToUpdate.CreationDate;
                 existingUser.Games = userToUpdate.Games; // Aktualizacja listy gier
-                _context.SaveChanges();
+                //_context.SaveChanges();
                 return existingUser as IUser; // Jawne rzutowanie na IUser
             }
             return null;
@@ -146,7 +147,7 @@ namespace Paczos.MemoryGame.DAO.DO
 
         public void AddGameToUserStats(int userId, IGame game)
         {
-            throw new Exception("Użytko mnie. Parametry wywołania: userId = " + userId + ", game = " + game);
+            //throw new Exception("Użytko mnie. Parametry wywołania: userId = " + userId + ", game = " + game);
             var user = _context.Users.Include(u => u.Games).FirstOrDefault(u => u.Id == userId);
             if (user != null)
             {
@@ -157,10 +158,10 @@ namespace Paczos.MemoryGame.DAO.DO
                 }
 
                 user.Games.Add(gameEntity);
-                _context.SaveChanges();
+                //_context.SaveChanges();
 
-                int gameCount = user.Games.Count;
-                throw new Exception($"User has {gameCount} games after adding the new game.");
+                //int gameCount = user.Games.Count;
+                //throw new Exception($"User has {gameCount} games after adding the new game.");
             }
             else
             {

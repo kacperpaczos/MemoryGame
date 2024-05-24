@@ -133,8 +133,8 @@ namespace Paczos.MemoryGame.UI.Views
 
         private void ClearData_Click(object sender, RoutedEventArgs e)
         {
-            App.ImageManager.ClearLocalData();
-            LoadImages();
+            _images.Clear();
+            RefreshImagesList();
         }
 
         private void RemoveImage_Click(object sender, RoutedEventArgs e)

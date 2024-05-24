@@ -18,8 +18,8 @@
             <TextBlock Text="Memory Game" FontSize="36" FontWeight="Bold" Margin="0,0,0,20" />
             <Button x:Name="PlayGameButton" Content="Graj" Click="PlayGame_Click" Width="200" Height="50" IsEnabled="False"/>
             <Button Content="Użytkownicy" Click="Users_Click" Width="200" Height="50" />
-            <Button Content="Image Manager" Click="ImageManager_Click" Width="200" Height="50" />
-            <Button Content="Wyjście" Click="Exit_Click" Width="200" Height="50" />
+            <Button Content="Menadżer zdjęc" Click="ImageManager_Click" Width="200" Height="50" />
+            <Button Content="Wyjdź" Click="Exit_Click" Width="200" Height="50" />
         </StackPanel>
     </Grid>
 </Page>

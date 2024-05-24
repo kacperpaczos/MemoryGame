@@ -9,7 +9,7 @@
       Title="Profile">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Margin="20">
             <TextBlock Text="Nick:" Margin="0,0,0,10"/>
             <TextBox x:Name="NickTextBox" Margin="0,0,0,20"/>
 
@@ -19,7 +19,7 @@
             <TextBlock Text="Nazwisko:" Margin="0,0,0,10"/>
             <TextBox x:Name="LastNameTextBox" Margin="0,0,0,20"/>
 
-            <Button Content="Zapisz zmiany" Click="SaveUserButton_Click"/>
+            <Button Content="Zapisz zmiany" Margin="0,20,0,0" Click="SaveUserButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>

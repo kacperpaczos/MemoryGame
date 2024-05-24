@@ -20,24 +20,24 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
                 <TextBlock Text="Nick:" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Right"/>
                 <TextBox x:Name="NickTextBox" Width="200" Margin="5" HorizontalAlignment="Right" TextChanged="TextBox_TextChanged"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
                 <TextBlock Text="Imię:" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Right"/>
                 <TextBox x:Name="FirstNameTextBox" Width="200" Margin="5" HorizontalAlignment="Right" TextChanged="TextBox_TextChanged"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
                 <TextBlock Text="Nazwisko:" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Right"/>
                 <TextBox x:Name="LastNameTextBox" Width="200" Margin="5" HorizontalAlignment="Right" TextChanged="TextBox_TextChanged"/>
             </StackPanel>
 
-            <Button x:Name="AddUserButton" Content="Dodaj użytkownika" Click="AddUserButton_Click" HorizontalAlignment="Center" Margin="5" IsEnabled="False"/>
-            <Button Content="Powrót" Click="BackToUsersButton_Click" HorizontalAlignment="Center" Margin="5"/>
+            <Button x:Name="AddUserButton" Content="Dodaj użytkownika" Click="AddUserButton_Click" HorizontalAlignment="Center" Margin="10" Padding="5" IsEnabled="False"/>
+            <Button Content="Powrót" Click="BackToUsersButton_Click" HorizontalAlignment="Center" Margin="10" Padding="5"/>
         </StackPanel>
     </Grid>
 </Page>

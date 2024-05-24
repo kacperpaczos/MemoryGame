@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\P0419818\\.nuget\\packages\\": {}
+    "C:\\Users\\kacpe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\Paczos.MemoryGame.INTERFACES.csproj",
+      "projectUniqueName": "C:\\Users\\kacpe\\Desktop\\MemoryGame\\MemoryGame\\Paczos.MemoryGame.INTERFACES\\Paczos.MemoryGame.INTERFACES.csproj",
       "projectName": "Paczos.MemoryGame.INTERFACES",
-      "projectPath": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\Paczos.MemoryGame.INTERFACES.csproj",
-      "packagesPath": "C:\\Users\\P0419818\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\P0419818\\Desktop\\MG5\\Paczos.MemoryGame.INTERFACES\\obj\\",
+      "projectPath": "C:\\Users\\kacpe\\Desktop\\MemoryGame\\MemoryGame\\Paczos.MemoryGame.INTERFACES\\Paczos.MemoryGame.INTERFACES.csproj",
+      "packagesPath": "C:\\Users\\kacpe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kacpe\\Desktop\\MemoryGame\\MemoryGame\\Paczos.MemoryGame.INTERFACES\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\P0419818\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kacpe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +28,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -67,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
