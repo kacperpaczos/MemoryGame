@@ -19,13 +19,16 @@ namespace Paczos.MemoryGame.DAO.DO
 
         public void LoadImages(string folderPath)
         {
-            var files = Directory.GetFiles(folderPath, "*.png");
-            foreach (var file in files)
+            if (Directory.Exists(folderPath))
             {
-                byte[] imageData = File.ReadAllBytes(file);
-                string id = GenerateUniqueId();
-                string name = Path.GetFileName(file);
-                AddImage(id, name, imageData);
+                var files = Directory.GetFiles(folderPath, "*.png");
+                foreach (var file in files)
+                {
+                    byte[] imageData = File.ReadAllBytes(file);
+                    string id = GenerateUniqueId();
+                    string name = Path.GetFileName(file);
+                    AddImage(id, name, imageData);
+                }
             }
         }
 
