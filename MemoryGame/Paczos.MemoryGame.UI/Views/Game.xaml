@@ -8,37 +8,56 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Game">
 
-    <Grid>
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <UniformGrid Grid.Column="0" Rows="4" Columns="4">
-            <Button Name="Card1" Click="Card_Click"/>
-            <Button Name="Card2" Click="Card_Click"/>
-            <Button Name="Card3" Click="Card_Click"/>
-            <Button Name="Card4" Click="Card_Click"/>
-            <Button Name="Card5" Click="Card_Click"/>
-            <Button Name="Card6" Click="Card_Click"/>
-            <Button Name="Card7" Click="Card_Click"/>
-            <Button Name="Card8" Click="Card_Click"/>
-            <Button Name="Card9" Click="Card_Click"/>
-            <Button Name="Card10" Click="Card_Click"/>
-            <Button Name="Card11" Click="Card_Click"/>
-            <Button Name="Card12" Click="Card_Click"/>
-            <Button Name="Card13" Click="Card_Click"/>
-            <Button Name="Card14" Click="Card_Click"/>
-            <Button Name="Card15" Click="Card_Click"/>
-            <Button Name="Card16" Click="Card_Click"/>
+        <!-- Wyspa kart -->
+        <UniformGrid Grid.Column="0" Rows="4" Columns="4" Margin="10">
+            <Button Name="Card1" Click="Card_Click" Tag="Images/Card1.png"/>
+            <Button Name="Card2" Click="Card_Click" Tag="Images/Card2.png"/>
+            <Button Name="Card3" Click="Card_Click" Tag="Images/Card3.png"/>
+            <Button Name="Card4" Click="Card_Click" Tag="Images/Card4.png"/>
+            <Button Name="Card5" Click="Card_Click" Tag="Images/Card5.png"/>
+            <Button Name="Card6" Click="Card_Click" Tag="Images/Card6.png"/>
+            <Button Name="Card7" Click="Card_Click" Tag="Images/Card7.png"/>
+            <Button Name="Card8" Click="Card_Click" Tag="Images/Card8.png"/>
+            <Button Name="Card9" Click="Card_Click" Tag="Images/Card9.png"/>
+            <Button Name="Card10" Click="Card_Click" Tag="Images/Card10.png"/>
+            <Button Name="Card11" Click="Card_Click" Tag="Images/Card11.png"/>
+            <Button Name="Card12" Click="Card_Click" Tag="Images/Card12.png"/>
+            <Button Name="Card13" Click="Card_Click" Tag="Images/Card13.png"/>
+            <Button Name="Card14" Click="Card_Click" Tag="Images/Card14.png"/>
+            <Button Name="Card15" Click="Card_Click" Tag="Images/Card15.png"/>
+            <Button Name="Card16" Click="Card_Click" Tag="Images/Card16.png"/>
         </UniformGrid>
 
-        <ListBox Grid.Column="1" Name="MovesList">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Image Source="{Binding}" Width="50" Height="50"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <!-- Wyspa ListBox i Label -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Name="BackToMenuButton" Content="Powrót do Menu" Click="BackToMenuButton_Click" Padding="10" FontSize="14" Margin="0,0,0,10" Grid.Row="0"/>
+            <Label Name="TimeLabel" Content="Czas: 00:00" FontSize="16" Margin="5" Grid.Row="1"/>
+            <Label Name="PlayerDataLabel" Content="Dane gracza" FontSize="16" Margin="5" Grid.Row="2"/>
+            
+            <!-- ListBox z przewijaniem -->
+            <Label Content="Historia rozgrywki" FontSize="16" Margin="5" Grid.Row="3"/>
+            <ListBox x:Name="MovesList" Margin="10" Grid.Row="4">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <Image Source="{Binding Image}" Width="50" Height="50" Margin="5"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
     </Grid>
 </Page>

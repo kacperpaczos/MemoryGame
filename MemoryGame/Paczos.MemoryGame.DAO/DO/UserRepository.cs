@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Paczos.MemoryGame.DAO.DO
 {
@@ -20,9 +21,18 @@ namespace Paczos.MemoryGame.DAO.DO
 
         public void TestUsers()
         {
-            Create("TestUser1", "Adam", "Nowak");
-            Create("TestUser2", "Ewa", "Kowalska");
-            Create("TestUser3", "Marek", "Wiśniewski");
+            var user1 = Create("TestUser1", "Adam", "Nowak");
+            var user2 = Create("TestUser2", "Ewa", "Kowalska");
+            var user3 = Create("TestUser3", "Marek", "Wiśniewski");
+
+            var game1 = new Game { UserId = user1.Id, StartTime = DateTime.Now.AddHours(-1), EndTime = DateTime.Now };
+            var game2 = new Game { UserId = user2.Id, StartTime = DateTime.Now.AddHours(-2), EndTime = DateTime.Now.AddHours(-1) };
+            var game3 = new Game { UserId = user2.Id, StartTime = DateTime.Now.AddHours(-3), EndTime = DateTime.Now.AddHours(-2) };
+            var game4 = new Game { UserId = user2.Id, StartTime = DateTime.Now.AddHours(-4), EndTime = DateTime.Now.AddHours(-3) };
+            var game5 = new Game { UserId = user3.Id, StartTime = DateTime.Now.AddHours(-5), EndTime = DateTime.Now.AddHours(-4) };
+
+            _context.Games.AddRange(game1, game2, game3, game4, game5);
+            _context.SaveChanges();
         }
 
         public IUser Create(IUser user)
@@ -69,7 +79,6 @@ namespace Paczos.MemoryGame.DAO.DO
 
         public IUser Update(IUser user)
         {
-            // Rzutowanie interfejsu na konkretny typ, aby umożliwić aktualizację.
             var userToUpdate = user as User;
             if (userToUpdate == null)
             {
@@ -83,6 +92,7 @@ namespace Paczos.MemoryGame.DAO.DO
                 existingUser.FirstName = userToUpdate.FirstName;
                 existingUser.LastName = userToUpdate.LastName;
                 existingUser.CreationDate = userToUpdate.CreationDate;
+                existingUser.Games = userToUpdate.Games; // Aktualizacja listy gier
                 _context.SaveChanges();
                 return existingUser as IUser; // Jawne rzutowanie na IUser
             }
@@ -99,6 +109,70 @@ namespace Paczos.MemoryGame.DAO.DO
                 return true;
             }
             return false;
+        }
+
+        public IGame StartGame(int userId)
+        {
+            var game = new Game
+            {
+                UserId = userId,
+                StartTime = DateTime.Now
+            };
+            _context.Games.Add(game);
+            _context.SaveChanges();
+            return game as IGame; // Rzutowanie na IGame
+        }
+
+        public IGame EndGame(int gameId)
+        {
+            var game = _context.Games.FirstOrDefault(g => g.Id == gameId);
+            if (game != null)
+            {
+                game.EndTime = DateTime.Now;
+                _context.SaveChanges();
+            }
+            return game as IGame; // Rzutowanie na IGame
+        }
+
+        public List<IGame> GetUserGames(int userId)
+        {
+            return _context.Games.Where(g => g.UserId == userId).Cast<IGame>().ToList();
+        }
+
+        public IUser GetUserWithGames(int userId)
+        {
+            return _context.Users.Include(u => u.Games).FirstOrDefault(u => u.Id == userId) as IUser;
+        }
+
+        public void AddGameToUserStats(int userId, IGame game)
+        {
+            throw new Exception("Użytko mnie. Parametry wywołania: userId = " + userId + ", game = " + game);
+            var user = _context.Users.Include(u => u.Games).FirstOrDefault(u => u.Id == userId);
+            if (user != null)
+            {
+                var gameEntity = game as Game;
+                if (gameEntity == null)
+                {
+                    throw new ArgumentException("Invalid game type");
+                }
+
+                user.Games.Add(gameEntity);
+                _context.SaveChanges();
+
+                int gameCount = user.Games.Count;
+                throw new Exception($"User has {gameCount} games after adding the new game.");
+            }
+            else
+            {
+                throw new ArgumentException("User not found");
+            }
+        }
+
+
+        public List<User> GetAllUsers()
+        {
+            // Implementacja metody, która zwraca listę wszystkich użytkowników
+            return _context.Users.ToList();
         }
     }
 }

@@ -10,23 +10,36 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Left side: Display all images -->
-        <ListBox x:Name="ImagesList" Grid.Column="0">
+        <!-- Lewa strona: Wyświetlanie wszystkich obrazów -->
+        <ListBox x:Name="ImagesList" Grid.Column="0" SelectionChanged="ImagesList_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding}" Width="100" Height="100" Margin="5"/>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Source="{Binding Image}" Width="100" Height="100" Margin="5"/>
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="5"/>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <!-- Right side: Load new images and return to main menu -->
+        <!-- Prawa strona: Ładowanie nowych obrazów i powrót do menu głównego -->
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Load Images" Click="LoadImages_Click" />
-            <Button Content="Return to Main Menu" Click="ReturnToMainMenu_Click" Margin="10" />
+            <!-- Wyspa 1: Dodawanie i usuwanie zdjęć -->
+            <StackPanel Margin="10">
+                <Button Content="Załaduj Obrazy" Click="LoadImages_Click" Padding="10"/>
+                <Button x:Name="RemoveImageButton" Content="Usuń Wybrane Zdjęcie" Click="RemoveImage_Click" Margin="10" Padding="10" IsEnabled="False"/>
+            </StackPanel>
+            <!-- Wyspa 2: Operacje na bazie danych -->
+            <StackPanel Margin="10">
+                <Button Content="Wyślij do Bazy Danych" Click="SendToDatabase_Click" Margin="10" Padding="10"/>
+                <Button Content="Pobierz z Bazy Danych" Click="FetchFromDatabase_Click" Margin="10" Padding="10"/>
+                <Button Content="Wyczyść Dane z pamięci lokalnej" Click="ClearData_Click" Margin="10" Padding="10"/>
+            </StackPanel>
+            <Button Content="Powrót do Menu Głównego" Click="ReturnToMainMenu_Click" Margin="10" Padding="10"/>
         </StackPanel>
     </Grid>
 </Page>

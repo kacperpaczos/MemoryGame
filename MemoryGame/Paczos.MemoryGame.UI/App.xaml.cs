@@ -23,7 +23,7 @@ namespace Paczos.MemoryGame.UI
             var context = new DAOContext();
             UserRepository = new UserRepository(context);
             UserRepository.TestUsers();
-            ImageManager = new ImageManager();
+            ImageManager = new ImageManager(context);
             ImageManager.LoadImages("images");
         }
     }

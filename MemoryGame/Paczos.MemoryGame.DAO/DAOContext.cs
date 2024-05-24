@@ -12,12 +12,12 @@ namespace Paczos.MemoryGame.DAO
     {
         public void InitializeData()
         {
-            //Users.Add(new User { Nick = "PlayerOne", FirstName = "Jan", LastName = "Kowalski", CreationDate = DateTime.Now });
-            //Users.Add(new User { Nick = "PlayerTwo", FirstName = "Anna", LastName = "Nowak", CreationDate = DateTime.Now });
             SaveChanges();
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<Game> Games { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

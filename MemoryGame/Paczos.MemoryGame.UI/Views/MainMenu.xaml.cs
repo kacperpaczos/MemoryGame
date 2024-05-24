@@ -22,6 +22,11 @@ namespace Paczos.MemoryGame.UI.Views
             PlayGameButton.IsEnabled = isUserSelected;
         }
 
+        private void MainMenu_Loaded(object sender, RoutedEventArgs e)
+        {
+            CheckIfUserSelected();
+        }
+
         private bool IsUserSelected()
         {
             // Sprawdź, czy FirstUser z App.xaml.cs nie jest null

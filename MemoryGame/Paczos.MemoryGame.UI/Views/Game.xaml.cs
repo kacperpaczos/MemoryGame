@@ -5,6 +5,10 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.IO;
 using Paczos.MemoryGame.DAO.DO;
+using Paczos.MemoryGame.INTERFACES.Entities;
+using System.Windows.Navigation;
+using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace Paczos.MemoryGame.UI.Views
 {
@@ -14,18 +18,135 @@ namespace Paczos.MemoryGame.UI.Views
         private int matchesFound = 0;
         private List<BitmapImage> images;
         private Dictionary<Button, BitmapImage> buttonImageMap;
+        private bool canClickCards = true;
+        private DispatcherTimer gameTimer;
+        private int secondsElapsed;
+        private IGame currentGame;
 
         public Game()
         {
             InitializeComponent();
             InitializeGameBoard();
+            SetPlayerData();
+            StartGameTimer();
+            InitializeGame();
+        }
+
+        private void InitializeGame()
+        {
+            if (App.FirstUser == null)
+            {
+                MessageBox.Show("Nie wybrano użytkownika.");
+                return;
+            }
+
+            var userId = App.FirstUser.Id;
+            var uniqueGameId = GenerateUniqueGameId();
+            var startTime = DateTime.Now;
+
+            currentGame = new Paczos.MemoryGame.DAO.Entities.Game
+            {
+                Id = uniqueGameId,
+                UserId = userId,
+                StartTime = startTime,
+                EndTime = startTime
+            };
+
+            App.UserRepository.StartGame(userId);
+
+            SetPlayerData();
+            InitializeGameBoard();
+            StartGameTimer();
+        }
+
+        private int GenerateUniqueGameId()
+        {
+            // Implementacja generowania unikalnego ID
+            return new Random().Next(1, int.MaxValue);
+        }
+
+        private void SetPlayerData()
+        {
+            var player = App.FirstUser;
+            PlayerDataLabel.Content = $"Gracz: {player.Nick} ({player.FirstName} {player.LastName})";
         }
 
         private void InitializeGameBoard()
         {
-            images = new List<BitmapImage>();
+            if (!CheckImageAvailability())
+            {
+                canClickCards = false;
+                return;
+            }
 
-            foreach (var id in App.ImageManager.GetAllImageIds())
+            LoadImages();
+            MapImagesToButtons();
+        }
+
+        private bool CheckImageAvailability()
+        {
+            var imageIds = App.ImageManager.GetAllImageIds();
+            return imageIds != null && imageIds.Count >= 8;
+        }
+
+        private void HandleMatchFound()
+        {
+            matchesFound++;
+            firstClicked.IsEnabled = false;
+            secondClicked.IsEnabled = false;
+
+            // Dodaj grafikę karty do MovesList
+            AddCardImageToMovesList(buttonImageMap[firstClicked]);
+
+            firstClicked = null;
+            secondClicked = null;
+
+            if (matchesFound == 8)
+            {
+                MessageBox.Show("Gratulacje! Znaleziono wszystkie pary!");
+                StopGameTimer();
+                EndCurrentGame();
+            }
+        }
+
+        private void EndCurrentGame()
+        {
+            MessageBox.Show("Koniec gry! Dziękujemy za grę.1");
+            if (currentGame != null)
+            {
+                MessageBox.Show("Koniec gry! Dziękujemy za grę2.");
+                currentGame.EndTime = DateTime.Now;
+
+                var gameEntity = new Paczos.MemoryGame.DAO.Entities.Game
+                {
+                    Id = currentGame.Id,
+                    StartTime = currentGame.StartTime,
+                    EndTime = currentGame.EndTime,
+                    // Przypisz inne właściwości, jeśli są
+                };
+
+                App.UserRepository.EndGame(gameEntity.Id);
+
+                var user = App.FirstUser;
+                user.Games.Add(gameEntity); // Dodaj grę do listy gier użytkownika
+                App.UserRepository.Update(user); // Zakładam, że masz metodę do aktualizacji użytkownika
+
+                // Wywołanie metody AddGameToUserStats
+                
+                MessageBox.Show("Koniec gry! Dziękujemy za grę3.");
+                App.UserRepository.AddGameToUserStats(user.Id, gameEntity);
+
+                currentGame = null;
+            }
+        }
+
+        private void LoadImages()
+        {
+            images = new List<BitmapImage>();
+            var random = new Random();
+            var selectedIds = SelectRandomImageIds(random);
+
+            foreach (var id in selectedIds)
             {
                 var imageBytes = App.ImageManager.GetImageById(id);
                 if (imageBytes != null)
@@ -41,40 +162,71 @@ namespace Paczos.MemoryGame.UI.Views
                     }
                 }
             }
+        }
 
+        private HashSet<string> SelectRandomImageIds(Random random)
+        {
+            var imageIds = App.ImageManager.GetAllImageIds();
+            var selectedIds = new HashSet<string>();
+
+            while (selectedIds.Count < 8)
+            {
+                var randomId = imageIds[random.Next(imageIds.Count)];
+                selectedIds.Add(randomId);
+            }
+
+            return selectedIds;
+        }
+
+        private void MapImagesToButtons()
+        {
             buttonImageMap = new Dictionary<Button, BitmapImage>();
+            var buttons = GetButtonsList();
+            var random = new Random();
 
-            var buttons = new List<Button>
+            foreach (var image in images)
+            {
+                AssignImageToButtons(image, buttons, random);
+            }
+        }
+
+        private List<Button> GetButtonsList()
+        {
+            return new List<Button>
             {
                 Card1, Card2, Card3, Card4, Card5, Card6, Card7, Card8,
                 Card9, Card10, Card11, Card12, Card13, Card14, Card15, Card16
             };
+        }
 
-            var random = new Random();
-            foreach (var image in images)
+        private void AssignImageToButtons(BitmapImage image, List<Button> buttons, Random random)
+        {
+            for (int i = 0; i < 2; i++) // Each image should appear twice
             {
-                for (int i = 0; i < 2; i++) // Assuming each image should appear twice
-                {
-                    if (buttons.Count == 0) break;
-                    var index = random.Next(buttons.Count);
-                    var button = buttons[index];
-                    buttons.RemoveAt(index);
-                    buttonImageMap[button] = image;
-                }
+                if (buttons.Count == 0) break;
+                var index = random.Next(buttons.Count);
+                var button = buttons[index];
+                buttons.RemoveAt(index);
+                buttonImageMap[button] = image;
             }
         }
 
         private void Card_Click(object sender, RoutedEventArgs e)
         {
+            if (!canClickCards)
+            {
+                MessageBox.Show("Za mało kart (potrzeba 8). Należy załadować zdjęcia poprzez manager w menu.");
+                return;
+            }
+
             if (firstClicked != null && secondClicked != null)
                 return;
 
             Button clickedButton = sender as Button;
-
-            if (clickedButton == null || !buttonImageMap.ContainsKey(clickedButton))
+            if (clickedButton == null || !buttonImageMap.ContainsKey(clickedButton) || clickedButton == firstClicked || clickedButton.IsEnabled == false)
                 return;
 
-            clickedButton.Content = new Image { Source = buttonImageMap[clickedButton] };
+            DisplayImageOnButton(clickedButton);
 
             if (firstClicked == null)
             {
@@ -83,33 +235,68 @@ namespace Paczos.MemoryGame.UI.Views
             }
 
             secondClicked = clickedButton;
+            CheckForMatch();
+        }
 
-            // Check for a match
+        private void DisplayImageOnButton(Button button)
+        {
+            button.Content = new Image { Source = buttonImageMap[button] };
+        }
+
+        private void CheckForMatch()
+        {
             if (buttonImageMap[firstClicked] == buttonImageMap[secondClicked])
             {
-                matchesFound++;
-                firstClicked = null;
-                secondClicked = null;
-
-                if (matchesFound == 8) // Assuming 8 pairs
-                {
-                    MessageBox.Show("You found all matches!");
-                }
+                HandleMatchFound();
             }
             else
             {
-                // Hide images again after a short delay
-                var timer = new System.Windows.Threading.DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-                timer.Tick += (s, args) =>
-                {
-                    firstClicked.Content = null;
-                    secondClicked.Content = null;
-                    firstClicked = null;
-                    secondClicked = null;
-                    timer.Stop();
-                };
-                timer.Start();
+                HideImagesAfterDelay();
             }
+        }
+
+        private async void HideImagesAfterDelay()
+        {
+            await Task.Delay(1000);
+            firstClicked.Content = null;
+            secondClicked.Content = null;
+            firstClicked = null;
+            secondClicked = null;
+        }
+
+        private void AddCardImageToMovesList(BitmapImage cardImage)
+        {
+            // Dodanie obrazu karty do MovesList
+            MovesList.Items.Add(new { Image = cardImage });
+        }
+
+        private void BackToMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MainMenu());
+        }
+
+        private void StartGameTimer()
+        {
+            secondsElapsed = 0;
+            gameTimer = new DispatcherTimer();
+            gameTimer.Interval = TimeSpan.FromSeconds(1);
+            gameTimer.Tick += GameTimer_Tick;
+            gameTimer.Start();
+        }
+
+        private void StopGameTimer()
+        {
+            if (gameTimer != null)
+            {
+                gameTimer.Stop();
+                gameTimer.Tick -= GameTimer_Tick;
+            }
+        }
+
+        private void GameTimer_Tick(object sender, EventArgs e)
+        {
+            secondsElapsed++;
+            TimeLabel.Content = $"Czas: {secondsElapsed} s";
         }
     }
 }

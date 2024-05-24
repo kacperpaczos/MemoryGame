@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Paczos.MemoryGame.DAO.DO;
@@ -16,22 +17,37 @@ namespace Paczos.MemoryGame.UI.Views
 
         private void LoadUsers()
         {
-            UsersListView.ItemsSource = App.UserRepository.ReadAll();
+            var users = App.UserRepository.GetAllUsers()
+                .Select(user => App.UserRepository.GetUserWithGames(user.Id))
+                .ToList();
+            UsersListView.ItemsSource = users;
+        }
+
+        private void UsersListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedUser = (User)UsersListView.SelectedItem;
+            DeleteUserButton.IsEnabled = selectedUser != null;
+            ProfileButton.IsEnabled = selectedUser != null;
+            SetFirstUserButton.IsEnabled = selectedUser != null;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            // Logika powrotu do menu głównego
             NavigationService.Navigate(new MainMenu());
+        }
+
+        private void AddUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new NewUser());
         }
 
         private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
-            if (UsersListView.SelectedItem is User selectedUser)
+            var selectedUser = (User)UsersListView.SelectedItem;
+            if (selectedUser != null)
             {
                 App.UserRepository.Delete(selectedUser.Id);
-                App.FirstUser = null;
-                LoadUsers(); // Odśwież listę użytkowników
+                LoadUsers();
             }
             else
             {
@@ -41,7 +57,8 @@ namespace Paczos.MemoryGame.UI.Views
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            if (UsersListView.SelectedItem is User selectedUser)
+            var selectedUser = (User)UsersListView.SelectedItem;
+            if (selectedUser != null)
             {
                 NavigationService.Navigate(new Profile(selectedUser.Id));
             }
@@ -51,22 +68,9 @@ namespace Paczos.MemoryGame.UI.Views
             }
         }
 
-        private void UsersListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            bool isItemSelected = UsersListView.SelectedItem != null;
-            DeleteUserButton.IsEnabled = isItemSelected;
-            ProfileButton.IsEnabled = isItemSelected;
-            SetFirstUserButton.IsEnabled = isItemSelected;
-        }
-
-        private void AddUserButton_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new NewUser());
-        }
-
         private void SetFirstUserButton_Click(object sender, RoutedEventArgs e)
         {
-            var selectedUser = UsersListView.SelectedItem as User; // Zakładając, że typem elementów jest User
+            var selectedUser = (User)UsersListView.SelectedItem;
             if (selectedUser != null)
             {
                 App.FirstUser = selectedUser;
